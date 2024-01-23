@@ -173,7 +173,7 @@ def reduce(
          $x_1 \ldots x_n$ and computes the reduction :math:`fn(x_3, fn(x_2,
          fn(x_1, x_0)))`
     """
-    return lambda x: start if len(x) == 0 else fn(x[0], reduce(fn, start)(x[1:]))
+    return lambda x: start if len(list(x)) == 0 else fn(list(x)[0], reduce(fn, start)(list(x)[1:]))
 
 
 def sum(ls: Iterable[float]) -> float:
